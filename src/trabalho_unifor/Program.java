@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import listaencadeada.ListaEncadeada;
+import trabalho_unifor.entities.Palavra;
+
 public class Program {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -22,14 +25,24 @@ public class Program {
 	 try(BufferedReader br = new BufferedReader(new FileReader(path))){
 		String line = br.readLine();
 		 
+		
+		ListaEncadeada<Palavra> lista = new ListaEncadeada<>();
+		int linha = 0;
+		
 		while(line  != null) {
-	    String[] field = (line.split(" "));
-	    list.addAll(Arrays.asList(field));
+			linha++;
+	    String[] field = line.split(" ");
+	    for(String palavra : field) {
+          Palavra p = new Palavra(palavra,linha);	    
+	    	lista.adicionar(p);
+	    
+	    }
 	    System.out.println(Arrays.toString(field));
 	    line = br.readLine();
+	  
 	   }
-		
-		
+	
+
 	}
 
 }
