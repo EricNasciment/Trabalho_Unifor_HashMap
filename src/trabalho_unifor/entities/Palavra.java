@@ -5,6 +5,10 @@ public class Palavra {
 	private String palavra;
 	private int ocorrencias;
 	
+public Palavra() {
+		
+		
+	}
 
 	public Palavra(String palavra) {
 		
